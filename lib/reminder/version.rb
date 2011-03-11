@@ -1,3 +1,3 @@
 module Reminder
-  VERSION = "0.0.1rc"
+  VERSION = "1.0.0"
 end
