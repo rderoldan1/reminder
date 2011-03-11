@@ -11,6 +11,7 @@ This is how it looks like
 
 That way, the Growl notification will notice (bother) me and remind (make) me commit.
 
+You'll need Growl Notify to use this gem. Download it [here](http://growl.info)
 
 Options
 =======
