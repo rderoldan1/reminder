@@ -5,16 +5,14 @@ require 'growl'
 require 'choice'
 
 Choice.options do
-  banner "Usage: #{File.basename(__FILE__)} [-mtT]"
+  banner "Usage: #{File.basename(__FILE__)} [-m]"
   header ''
   header 'Notification Options:'
 
   option :message do
-    d = "How's it going you awesome person?"
     short '-m'
     long '--message=MESSAGE'
-    desc "The notification message. The reminder! (default #{d})"
-    default d
+    desc "The notification message. The reminder!"
   end
 
   option :title do
@@ -49,5 +47,8 @@ Choice.options do
 end
 
 options = Choice.choices
-
-Reminder::Notifier.new(options).run
+begin
+  Reminder::Notifier.new(options).run
+rescue Exception => e
+  puts e.message
+end

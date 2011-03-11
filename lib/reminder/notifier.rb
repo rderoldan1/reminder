@@ -6,6 +6,7 @@ module Reminder
       @message   = options[:message]
       @title     = options[:title]
       @time      = options[:time]
+      raise NoMessageException and return if @message.nil?
     end
     
     def run 
