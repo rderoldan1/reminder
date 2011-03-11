@@ -12,9 +12,10 @@ module Reminder
     def run 
       raise GrowlNotInstalled and return unless Growl.installed?
       notification = Growl.new
-      notification.message = @message
-      notification.title = @title
+      
       notification.icon = nil
+      notification.title = @title
+      notification.message = @message
       
       while true
         notification.run
