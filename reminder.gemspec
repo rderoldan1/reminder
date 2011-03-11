@@ -15,6 +15,7 @@ Gem::Specification.new do |s|
   s.rubyforge_project = "reminder"
 
   s.add_dependency('growl')
+  s.add_dependency('choice')
   s.add_development_dependency('rspec')
   s.add_development_dependency('pamela')
 

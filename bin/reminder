@@ -17,7 +17,7 @@ Choice.options do
   end
 
   option :title do
-    d = "Just remember"
+    d = "Just remember..."
     short '-T'
     long '--title=TITLE'
     desc "The title of the notification. (default #{d})"
