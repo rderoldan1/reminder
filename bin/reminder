@@ -1,18 +1,19 @@
 #!/usr/bin/env ruby
 $LOAD_PATH.unshift File.dirname(__FILE__) + '/../lib'
 require 'reminder'
+require 'growl'
 require 'choice'
 
 Choice.options do
-  banner "Usage: #{File.basename(__FILE__)} [-hptv]"
+  banner "Usage: #{File.basename(__FILE__)} [-mtT]"
   header ''
-  header 'Server options:'
+  header 'Notification Options:'
 
   option :message do
     d = "How's it going you awesome person?"
     short '-m'
     long '--message=MESSAGE'
-    desc "This is the actual reminder. Just type what you want you to be reminded of (default #{d})"
+    desc "The notification message. The reminder! (default #{d})"
     default d
   end
 
@@ -34,7 +35,7 @@ Choice.options do
   end
   
   separator ''
-  separator 'Common options: '
+  separator 'Other options: '
 
   option :version do
     short '-v'
@@ -44,10 +45,9 @@ Choice.options do
       puts "#{File.basename(__FILE__)} v#{Reminder::VERSION}"
       exit
     end
-  end
-  
+  end  
 end
 
 options = Choice.choices
 
-Reminder::Notifier.start(options)
+Reminder::Notifier.new(options).run

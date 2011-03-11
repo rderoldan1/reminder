@@ -1,0 +1,6 @@
+Reminder
+========
+
+This is a simple gem that will throw a Growl notification every certain time. That way, you'll be reminded of something.
+
+For example, I normally make a lot of stuff before commiting my changes, which I know is really bad (and it's what pushed me to write this), so I just set a reminder to commit every 10 minutes.
